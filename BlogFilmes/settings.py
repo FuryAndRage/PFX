@@ -26,7 +26,7 @@ SECRET_KEY = 'g^x3^vr=d&zf@9apvff42me2p4k&b5vc-)6m*o##it+dmpp&8y'
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['192.168.1.18','192.168.1.7','localhost']
+ALLOWED_HOSTS = ['192.168.1.18','192.168.1.9','localhost']
 
 # Application definition
 

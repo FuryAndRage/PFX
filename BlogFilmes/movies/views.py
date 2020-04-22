@@ -15,9 +15,10 @@ class MovieSearch(MoviesView):
 	def get_queryset(self):
 		qs = super().get_queryset()
 		termo = self.request.GET.get('termo')
-
+		if not termo:
+			return qs
 		qs = qs.filter(movie_name__icontains = termo)
-		if not termo and not qs:
+		if not  qs:
 			return qs
 		return qs
 

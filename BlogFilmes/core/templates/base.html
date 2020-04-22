@@ -147,27 +147,36 @@ body{
 </style>
 </head>
 <body>
+  
   <div class="navbar-fixed">
     
   
-  <nav class="navbar-fixed">
+  <nav>
     <div class="nav-wrapper ">
 
-      <a href="{% url 'filme:filme_list' %}" style="font-family: 'Roboto Condensed', sans-serif; font-weight:700" class="brand-logo center"><i class="material-icons large">movie</i>POBREFLIX</a>
-
+      <a href="{% url 'filme:filme_list' %}" style="font-family: 'Roboto Condensed', sans-serif; font-weight:700" class="brand-logo center hide-on-med-and-down"><i class="material-icons large">movie</i>POBREFLIX</a>
+     <a href="{% url 'filme:filme_list' %}" style="font-family: 'Roboto Condensed', sans-serif; font-weight:700; font-size: 1.6rem" class="brand-logo left hide-on-large-only"><i class="material-icons large">movie</i>POBREFLIX</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="{% url 'filme:filme_list' %}">Lista de Canais</a></li>
         <li><a href="{% url 'movie:movie_list' %}">Filmes</a></li>
         <li><a href="{% url 'desenho:desenho_list' %}">Desenhos 24h</a></li>
-
+      </ul>
+      <ul id="nav-mobile" class="right hide-on-large-only" >
+        <li><a href="{% url 'filme:filme_list' %}">Canais</a></li>
+        <li><a href="{% url 'movie:movie_list' %}">Filmes</a></li>
+        <li><a href="{% url 'desenho:desenho_list' %}">Desenhos 24h</a></li>
       </ul>
     </div>
-  </nav>
+
+      
+   
   </div>
-  <div class="container">
+
+
+  <div  class="container">
     {% block search %}
         
-      {% endblock search %}
+    {% endblock search %}
   </div>
   
         {%  block main %}
@@ -180,20 +189,20 @@ body{
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="https://vjs.zencdn.net/7.7.5/video.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
-  <script src="{% static 'vendor/jquery.js'%}"></script> 
+  
   <script src="{% static 'dist/lity.js'%}"></script>
   <script src="{% static 'assets/prism.js'%}"></script>
+  <script src="{% static 'vendor/jquery/jquery.js'%}"></script>
   <script src="{% static 'dist/videojs-playlist.js'%}"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
- 
-    $(".button-collapse").sideNav();
-        
-  });
+
+  <script type="text/javascript">
+ $(document).ready(function(){
+    $('.dropdown-trigger').dropdown();
 </script>
-  
 
 {% block scripts %}
+
 {% endblock scripts %}
 </body>
+
 </html>
