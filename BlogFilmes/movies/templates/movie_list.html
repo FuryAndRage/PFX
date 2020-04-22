@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block search %}
+  <form action="{% url 'movie:search' %}" class="white-text">
+      <input class="white-text" type="search" placeholder="Search" name="termo">
+  </form>
+{% endblock search %}
+
+{% block main %}
+	<div class="row">
+{% for obj in objects %}
+<div class="col s12 m3 ">
+  <div class="card zoom">
+    <div class="card-image waves-effect waves-block waves-light">
+      <a href="{% url 'movie:player_movie' obj.id %}"><img style="height: 200px;width: 400px;" src="{{obj.movie_img}}"></a>
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4 truncate">{{obj.movie_name}}<i class="material-icons">more_vert</i></span>
+      
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">{{obj.movie_name}}<i class="material-icons">close</i> </span>
+      <p>{{obj.movie_sinopse}}</p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>    
+
+
+
+<div class="container">
+  <div class="col center-align">
+    {% include "includes/_pagination.html" %}
+  </div>
+  
+</div>
+
+{% endblock main %}
+

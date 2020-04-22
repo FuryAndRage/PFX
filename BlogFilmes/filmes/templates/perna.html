@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+   
+  
+ 
+<div class="container">
+  {% block video %}
+    <video
+    id="my-video"
+    class="video-js video-js-responsive-container"
+    controls
+    autoplay
+    preload="auto"
+    width="640"
+    height="480"
+    
+    data-setup="{}">
+  </video>
+  {% endblock video %}
+
+</div>
+
+  
+{% block scripts %}
+
+  <script>
+
+
+    var videoList = [
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EVC1YdzwtbNDhAVmQmKPgZ0BDmzHZ5Npobx_mG_2Q5xLuQ?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EUZ7_Swj-7lJhcXSJaCbankBHChqY2uFU_HqQHicJSM8Lw?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/ER7B2OFIExlCiLmHsbdQj9QBYuEpV5dRNMGrxAthzXs7JA?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EejZy6Gbg0lEt583ikui-PkB6Ud_wW5xHrxzHBMpxyrdHA?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EYLTCwZUrDFAsNKIfqMroEwBGDBfG90R77gkeiQAnWsacw?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EVNsMrqmeWhLpVuw7MKM_oIBVlKeDi1a4JZtwlOSTb_b2Q?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/ETfpj7RaMhlIn7QigZny8wQBT9-qrq91QZJzyO1_SpVOoA?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EU-i9X30NsZCr_-6jGBtYgsBvZgdrGt_pX3nCZifG0TFXQ?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/Eed7_z5k0q1FuxSWcaCDqo4BGOpFycABKrMexlHAaulGjg?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EdIAQ5BMmTBHkCmdcmmNfAkBvw7_oJ74rjRB3g3LcAdSBg?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EdQ9xdqBOf1JvWp6V02aFyMBOgUHyCCfKnEZLjCvL2-bsg?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EZCJbheyV4dGmk8VxUDrCeYBOtymA1feZcZQ91qbsHhENw?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/Ef5_sbm-hXJNmWob-dWe5jgBuflo2B1fv_OrBZbA9Q-ZSA?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EZ7tQX9-Q2VDnasiBJ2848cBitNRDZ9ZwcJUa7bQRLAmAw?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/EaJ9oSoflHRCiiJBRkZoZ8cBqpAi5z52WcrBSIa4oTgbQg?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},
+    {sources: [{src:'https://emcc-my.sharepoint.com/:v:/g/personal/ciscowalker_86_ondrive_pw/Ed02siXZuMdMj5qlE-RJiL4BZncGGB76lo-iJlyH0Ea_Gw?&download=1' ,type: 'video/mp4'}],poster: 'https://imgur.com/D8ICdSU.jpg'},    
+
+    ];
+
+    
+    var player = videojs(document.querySelector('video'),  {
+      inactivityTimeout: 0,
+    });
+
+    try {
+      // try on ios
+      player.volume(0);
+    } catch (e) {}
+
+    player.on([
+      'duringplaylistchange',
+      'playlistchange',
+      'beforeplaylistitem',
+      'playlistitem',
+      'playlistsorted',
+      
+    ], function(e) {
+      videojs.log('player saw "' + e.type + '"');
+
+      player.playlist.shuffle({rest: true});
+      player.playlist.autoadvance(0);    
+    });
+ 
+    player.playlist(videoList);  
+ </script> 
+{% endblock scripts %}
+
+

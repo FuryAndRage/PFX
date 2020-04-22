@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+   
+  
+ 
+<div class="container">
+  <div class="row">
+  {% block video %}
+    <video
+    id="my-video"
+    class="video-js video-js-responsive-container"
+    controls
+    autoplay
+    preload="auto"
+    width="640"
+    height="480"
+    
+    data-setup="{}">
+  </video>
+  {% endblock video %}
+</div>
+</div>
+
+  
+{% block scripts %}
+
+  <script>
+
+    
+    var videoList = [{{obj.url_desenho|safe}}];
+    
+    
+    var player = videojs(document.querySelector('video'),  {
+      inactivityTimeout: 0,
+    });
+
+    try {
+      // try on ios
+      player.volume(0);
+    } catch (e) {}
+
+    player.on([
+      'duringplaylistchange',
+      'playlistchange',
+      'beforeplaylistitem',
+      'playlistitem',
+      'playlistsorted',
+      
+    ], function(e) {
+      videojs.log('player saw "' + e.type + '"');
+
+      player.playlist.shuffle({rest: true});
+      player.playlist.autoadvance(0);    
+    });
+ 
+    player.playlist(videoList);  
+ </script> 
+{% endblock scripts %}
+
+

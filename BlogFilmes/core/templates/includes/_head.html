@@ -1,0 +1,156 @@
+{% load static %}
+<head>
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/alt/video-js-cdn.css" rel="stylesheet">
+  
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>CineMais</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+
+  
+  <link href="{% static 'assets/prism.css'%}" media="all" rel="stylesheet" type="text/css">
+  <link href="{% static 'dist/lity.css'%}" rel="stylesheet"/>
+
+  <!-- Custom styles for this template -->
+  
+<style type="text/css">
+
+*{
+  padding: 0px;
+  margin:0px;
+
+  box-sizing: border-box;
+
+}
+
+body{
+  background-color: #201D26;
+  font-family: 'Oswald', sans-serif;
+}
+
+.hide {
+   position: absolute !important;
+   top: -9999px !important;
+   left: -9999px !important;
+}
+
+.nav-color{
+  background-color: #fe346e;
+}
+
+.navbar-brand{
+  font-weight: 400;
+  font-size: 1.8rem
+}
+  
+
+.navbar-btn{
+
+  background-color: #fe346e;
+  color:white; 
+  
+  
+}
+.navbar-btn:hover{
+  background-color: #201D26;
+  color:white; 
+  
+}
+
+
+  .categorias-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-top: 0px;
+
+  }
+
+  .categorias{
+    margin: 20px;
+  } 
+
+  .categorias a{
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    color:#fe346e;
+    background-color: white;
+    padding: 0px 10px 5px 10px
+    
+
+  }
+
+  .categorias a:hover{
+    background-color: #fe346e;
+    color: white;
+  }
+
+  .poster{
+    height: 250px;
+    width: 125px;
+    padding: -20px;
+    margin: 10px;
+
+    transition: transform .1s;
+
+}
+
+
+  .poster:hover{
+    transform: scale(1.2);
+  }
+
+  .poster > a:hover{
+    filter: opacity(70%);
+  
+  }
+
+  .zoom{
+
+  }
+ .zoom:hover{
+    transform: scale(1.2);
+    z-index: 1;
+  }
+
+  .zoom > a:hover{
+    filter: opacity(70%);
+  
+  }
+
+
+  .video-js-responsive-container.vjs-hd {
+    padding-top: 35.50%;
+}
+.video-js-responsive-container.vjs-sd {
+    padding-top: 55%;
+}
+.video-js-responsive-container {
+    width: 100%;
+    position: relative;
+}
+.video-js-responsive-container .video-js {
+    height: 100%; 
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+}
+
+</style>
+</head>

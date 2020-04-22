@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+<style type="text/css">
+	
+</style>
+
+{% block video %}
+
+
+<div class="container">
+	<video
+    id="my-video"
+    class="video-js video-js-responsive-container"
+    controls
+    autoplay
+    preload="auto"
+    width="640"
+    height="480"
+    poster="{{obj.img_filme}}"
+    data-setup="{}">
+    <source src="{{obj.url_filme}}" type="application/x-mpegURL">
+	</video>
+
+</div>
+	
+{% endblock video %}
+
+
+
+
+    
+
+    
+
+
+
+  	
+ 
