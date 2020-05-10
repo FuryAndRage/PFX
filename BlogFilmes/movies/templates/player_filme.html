@@ -9,6 +9,9 @@
 
 
 <div class="container">
+    <div class="col s12">
+        <h2 class="center white-text">{{obj.movie_name}}</h2>
+    </div>
   <video
     id="my-video"
     class="video-js video-js-responsive-container"
@@ -21,7 +24,10 @@
     data-setup="{}">
     <source src="{{obj.movie_url}}" type="video/mp4">
   </video>
-
+  <div style="margin-top: 30px" class="col s12 white-text">
+        <h5><strong>Sinopse:</strong></h5>
+        <p>{{obj.movie_sinopse}}</p>
+  </div>
 </div>
   
 {% endblock video %}
